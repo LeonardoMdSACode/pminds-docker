@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  backup:
+    build: .
+    container_name: backup-container
+    environment:
+      - DB_HOST=ip/host
+      - DB_PORT=porto
+      - DB_USER=user
+      - DB_PASSWORD=password
+      - DB_NAME=nome_da_db
+      - BACKUP_DIR=/mnt/backups
+      - RETENTION_DAYS=X
+      - ENCRYPTION_KEY=minha_chave_secreta
+    volumes:
+      - /mnt/backups:/mnt/backups
+    restart: always
+    

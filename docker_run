@@ -1,0 +1,9 @@
+Criar o container:
+
+docker-compose up -d
+
+Verificar backup:
+
+docker run --rm -v /mnt/backups:/mnt/backups backup-container
+
+docker exec -it backup-container ls -l /mnt/backups

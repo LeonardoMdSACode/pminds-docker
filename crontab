@@ -1,0 +1,3 @@
+0 3,14 * * * docker run --rm -v /mnt/backups:/mnt/backups backup-container
+
+@reboot docker-compose up -d
