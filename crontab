@@ -1,3 +1,7 @@
+crontab -e
+
+# Adicionar as seguintes linhas ao crontab para executar o backup:
 0 3,14 * * * docker run --rm -v /mnt/backups:/mnt/backups backup-container
 
+# Adicionalmente, para garantir que os containers são iniciados após reboot:
 @reboot docker-compose up -d
